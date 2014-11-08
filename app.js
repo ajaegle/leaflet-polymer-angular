@@ -1,3 +1,11 @@
+window.NG_POLYMER_ELEMENTS_EXTENDED_MAPPINGS = {
+    coreItem: {
+        ngClick: {
+            event: 'item-clicked'
+        }
+    }
+};
+
 document.addEventListener('polymer-ready', function() {
     var navicon = document.getElementById('navicon');
     var drawerPanel = document.getElementById('drawerPanel');
@@ -28,6 +36,12 @@ angular.module('polyhack')
             function(res) {_this.result = res.data.results;},
             function(err) { console.log(err); }
           );
+      };
+      this.setLocation = function(index) {
+          console.log("set location of index " + index);
+          var hit = this.result[index];
+          this.location.lat = hit.geometry.location.lat;
+          this.location.lon = hit.geometry.location.lng;
       };
     }
   );

@@ -55,9 +55,8 @@
       <input type="text" ng-model="main.location.lon"
         ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"
       />
-      <div>Result: <pre>{{main.result | json}}</pre></div></br>
       <core-menu>
-        <core-item ng-repeat="item in items">{{ item }}</core-item>
+        <core-item ng-repeat="hit in main.result" ng-click="main.setLocation($index)">{{ hit.formatted_address }}</core-item>
       </core-menu>
     </core-header-panel>
 
