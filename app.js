@@ -15,16 +15,20 @@ angular.module('polyhack')
       var _this = this;
       this.performSearch = function(query) {
         console.log(query);
-        _this.result = GeoCoder.request(query);
+          GeoCoder.request(query).then(
+            function(res) {_this.result = res.data.results;},
+            function(err) { console.log(err); }
+          );
       };
     }
   );
 
 angular.module('polyhack')
   .service('GeoCoder',
-    function() {
+    function($http) {
       this.request = function (query) {
-        return query + "!"
+        var url = 'https://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=' + query;
+        return $http.get(url);
       }
     }
   );
