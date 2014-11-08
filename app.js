@@ -3,6 +3,11 @@ window.NG_POLYMER_ELEMENTS_EXTENDED_MAPPINGS = {
         ngClick: {
             event: 'item-clicked'
         }
+    },
+    paperIconButton: {
+        ngClick: {
+            event: 'item-clicked'
+        }
     }
 };
 

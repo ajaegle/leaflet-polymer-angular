@@ -45,8 +45,8 @@
   <core-drawer-panel id="drawerPanel" ng-controller="MainCtrl as main">
     <core-header-panel drawer>
       <core-toolbar id="navheader">
-        <paper-input ng-model="main.search" label="Search"></paper-input>
-        <button ng-click="main.performSearch(main.search)">Search</button>
+        <paper-input ng-keyup="$event.keyCode == 13 ? main.performSearch(main.search) : null" ng-model="main.search" label="Search"></paper-input>
+        <paper-icon-button icon="search" ng-click="main.performSearch(main.search)"></paper-icon-button>
       </core-toolbar>
       <div>Search: {{main.search}}</div>
       <input type="text" ng-model="main.location.lat"
