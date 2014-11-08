@@ -4,9 +4,18 @@
 <body>
 
 <script src="bower_components/platform/platform.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="app.js"></script>
+
+
 <link rel="import" href="bower_components/leaflet-map/leaflet-map.html">
 
-<leaflet-map> </leaflet-map>
+<div ng-app="polyhack">
+  <div ng-controller="MainCtrl as main">
+    Key: {{main.key}}
+    <leaflet-map> </leaflet-map>
+  </div>
+</div>
 
 </body>
 </html>
