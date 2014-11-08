@@ -48,7 +48,7 @@
         <paper-input ng-keyup="$event.keyCode == 13 ? main.performSearch(main.search) : null" ng-model="main.search" label="Search"></paper-input>
         <paper-icon-button icon="search" ng-click="main.performSearch(main.search)"></paper-icon-button>
       </core-toolbar>
-      <div ng-if="main.location.lat && main.location.lon">
+      <div>
         <table style="padding: 10px;">
           <tr><td>Latitude:</td><td>{{main.location.lat}}</td></tr>
           <tr><td>Longitude:</td><td>{{main.location.lon}}</td></tr>
