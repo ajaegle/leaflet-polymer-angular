@@ -48,13 +48,12 @@
         <paper-input ng-keyup="$event.keyCode == 13 ? main.performSearch(main.search) : null" ng-model="main.search" label="Search"></paper-input>
         <paper-icon-button icon="search" ng-click="main.performSearch(main.search)"></paper-icon-button>
       </core-toolbar>
-      <div>Search: {{main.search}}</div>
-      <input type="text" ng-model="main.location.lat"
-        ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"
-      />
-      <input type="text" ng-model="main.location.lon"
-        ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"
-      />
+      <div ng-if="main.location.lat && main.location.lon">
+        <table style="padding: 10px;">
+          <tr><td>Latitude:</td><td>{{main.location.lat}}</td></tr>
+          <tr><td>Longitude:</td><td>{{main.location.lon}}</td></tr>
+        </table>
+      </div>
       <core-menu>
         <core-item ng-repeat="hit in main.result" ng-click="main.setLocation($index)">{{ hit.formatted_address }}</core-item>
       </core-menu>
@@ -63,7 +62,7 @@
     <core-header-panel main>
       <core-toolbar id="mainheader">
         <paper-icon-button id="navicon" icon="menu"></paper-icon-button>
-        <span flex>Title</span>
+        <span flex>Map</span>
       </core-toolbar>
       <div class="content">
         <leaflet-map zoom="{{main.zoom}}" latitude="{{main.location.lat}}" longitude="{{main.location.lon}}" >
