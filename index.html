@@ -15,7 +15,11 @@
 <div ng-app="polyhack">
   <div ng-controller="MainCtrl as main">
     <paper-input ng-model="main.search" label="Search"></paper-input>
-    Search: {{main.search}}</br>
+    <div>Search: {{main.search}}<div></br>
+
+    <input type="button" value="search!" ng-click="main.performSearch(main.search)"/>
+    <div>Result: {{main.result}}</div></br>
+
     <input type="text" ng-model="main.location.lat"
       ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"
     />
