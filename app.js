@@ -15,6 +15,7 @@ angular.module('polyhack', ['ng-polymer-elements']);
 angular.module('polyhack')
   .controller('MainCtrl',
     function(GeoCoder) {
+      this.search = 'Wildpark';
       this.location = {
         lat: 49.005120,
         lon: 8.414887
