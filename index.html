@@ -46,6 +46,7 @@
     <core-header-panel drawer>
       <core-toolbar id="navheader">
         <paper-input ng-model="main.search" label="Search"></paper-input>
+        <button ng-click="main.performSearch(main.search)">Search</button>
       </core-toolbar>
       <div>Search: {{main.search}}</div>
       <input type="text" ng-model="main.location.lat"
@@ -55,6 +56,9 @@
         ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"
       />
       <div>Result: <pre>{{main.result | json}}</pre></div></br>
+      <core-menu>
+        <core-item ng-repeat="item in items">{{ item }}</core-item>
+      </core-menu>
     </core-header-panel>
 
     <core-header-panel main>
