@@ -1,4 +1,8 @@
-angular.module('polyhack', []);
+window.addEventListener('polymer-ready', function() {
+    angular.bootstrap(wrap(document), ['polyhack']);
+});
+
+angular.module('polyhack', ['ng-polymer-elements']);
 
 angular.module('polyhack')
   .controller('MainCtrl',

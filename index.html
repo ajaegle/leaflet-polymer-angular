@@ -5,13 +5,17 @@
 
 <script src="bower_components/platform/platform.js"></script>
 <script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/ng-polymer-elements/ng-polymer-elements.min.js"></script>
 <script src="app.js"></script>
 
-
 <link rel="import" href="bower_components/leaflet-map/leaflet-map.html">
+<link rel="import" href="bower_components/paper-input/paper-input.html">
+
 
 <div ng-app="polyhack">
   <div ng-controller="MainCtrl as main">
+    <paper-input ng-model="main.search" label="Search"></paper-input>
+    Search: {{main.search}}</br>
     <input type="text" ng-model="main.location.lat"
       ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"
     />
