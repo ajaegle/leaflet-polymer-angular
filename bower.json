@@ -1,0 +1,19 @@
+{
+  "name": "leaflet-polymer-angular",
+  "version": "0.0.0",
+  "authors": [
+    "ajaegle <mail@ajaegle.de>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.4.2",
+    "leaflet-map": "~0.3.1"
+  }
+}
