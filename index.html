@@ -12,7 +12,8 @@
 
 <div ng-app="polyhack">
   <div ng-controller="MainCtrl as main">
-    <leaflet-map zoom="{{main.zoom}}"> </leaflet-map>
+    <leaflet-map zoom="{{main.zoom}}" latitude="{{main.location.lat}}" longitude="{{main.location.lon}}" >
+    </leaflet-map>
   </div>
 </div>
 
